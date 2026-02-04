@@ -4,20 +4,20 @@ import { motion } from 'framer-motion';
 const services = [
     {
         icon: <Plane className="w-8 h-8" />,
-        title: "Flight Bookings",
-        description: "Domestic and international flight arrangements with exclusive corporate rates and flexible changes.",
-        tag: "Primary Service"
+        title: "Managed Global Ticketing",
+        description: "Priority flight management with institutional-grade fare engineering and 24/7 dedicated ticketing desks.",
+        tag: "Core Mobility"
     },
     {
         icon: <BarChart3 className="w-8 h-8" />,
-        title: "Corporate Management",
-        description: "End-to-end travel management for businesses, including policy compliance and reporting.",
+        title: "360° Corporate Travel",
+        description: "End-to-end management from managed booking to ticketing, hotel procurement, and car rentals.",
         tag: "B2B Expert"
     },
     {
         icon: <Hotel className="w-8 h-8" />,
-        title: "Hotel Reservations",
-        description: "Curated selection of premium hotels in Ghana and globally with negotiated business rates.",
+        title: "Accommodation Management",
+        description: "Direct access to institutional hospitality rates and seamless hotel management for your global teams.",
         tag: "Global Reach"
     },
     {
@@ -28,14 +28,14 @@ const services = [
     },
     {
         icon: <Calendar className="w-8 h-8" />,
-        title: "MICE Services",
+        title: "MICE & Strategic Events",
         description: "Professional planning for Meetings, Incentives, Conferences, and Events across West Africa.",
         tag: "Events"
     },
     {
         icon: <Headphones className="w-8 h-8" />,
-        title: "24/7 Dedicated Support",
-        description: "Emergency travel assistance whenever and wherever you need it, handled by travel experts.",
+        title: "Institutional Support",
+        description: "24/7 emergency travel assistance and dedicated account management for corporate partners.",
         tag: "Always On"
     }
 ];
@@ -45,13 +45,12 @@ const Services = () => {
         <section id="services" className="py-24 bg-white">
             <div className="section-container">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-brand-blue font-bold text-sm uppercase tracking-[0.3em] mb-4">Our Services</h2>
+                    <h2 className="text-brand-blue font-bold text-sm uppercase tracking-[0.3em] mb-4">Corporate Excellence</h2>
                     <h3 className="text-3xl lg:text-5xl font-extrabold text-slate-900 mb-6">
-                        Comprehensive Travel Solutions for Every Need
+                        The Premier Partner for Institutional Travel
                     </h3>
                     <p className="text-slate-600 text-lg">
-                        From individual flight bookings to complex corporate travel programs,
-                        Satguru Travel Ghana provides world-class expertise at every step.
+                        As Africa's leading travel management company, Satguru delivers unrivaled 360° solutions tailored for the continent's most prestigious organizations.
                     </p>
                 </div>
 
@@ -85,17 +84,17 @@ const Services = () => {
                 <div className="mt-20 p-8 lg:p-12 rounded-[2.5rem] bg-brand-blue text-white relative overflow-hidden">
                     <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h3 className="text-3xl font-extrabold mb-6">Are you a Corporate HR or Admin Manager?</h3>
+                            <h3 className="text-3xl font-extrabold mb-6">Streamline Your Corporate Mobility</h3>
                             <p className="text-slate-300 text-lg mb-8">
-                                Revolutionize your company's travel management. Reduce costs by up to 30% while
-                                providing your employees with a premium travel experience.
+                                Revolutionize your company's travel with a 360° management partner. Reduce costs by up to 30% while
+                                providing your employees with a premium, managed travel experience.
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <button className="px-8 py-4 rounded-xl bg-brand-gold text-brand-blue font-bold hover:bg-brand-gold/90 transition-colors">
-                                    Setup Employee Program
+                                    Setup Corporate Program
                                 </button>
                                 <button className="px-8 py-4 rounded-xl bg-white/10 text-white font-bold hover:bg-white/20 transition-colors border border-white/10 backdrop-blur-sm">
-                                    Download ROI Whitepaper
+                                    Download Corporate Brochure
                                 </button>
                             </div>
                         </div>

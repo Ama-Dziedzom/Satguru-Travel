@@ -10,7 +10,7 @@ const Footer = ({ onLinkClick }: { onLinkClick: (view: any) => void }) => {
                 { name: "Corporate Travel", view: "corporate" },
                 { name: "Leisure Booking", view: "flights" },
                 { name: "Visa & Passport", view: "visa" },
-                { name: "MICE & Events", view: "management" },
+                { name: "All Services", view: "services" },
                 { name: "Strategic Solutions", view: "solutions" }
             ]
         },

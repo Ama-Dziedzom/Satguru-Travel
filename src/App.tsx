@@ -1,4 +1,4 @@
-import { Plane, ArrowRight, MessageSquare, Menu, X, Star, Briefcase, BarChart3, Shield, MapPin, Phone, Mail, Globe, CheckCircle2 } from 'lucide-react';
+import { Plane, ArrowRight, MessageSquare, Menu, X, Star, Briefcase, BarChart3, Shield, MapPin, Phone, Mail, Globe, CheckCircle2, Palmtree, Package, Key } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { cn } from './lib/utils';
@@ -6,6 +6,7 @@ import BookingHero from './components/BookingHero';
 import GhanaSection from './components/GhanaSection';
 import Partners from './components/Partners';
 import IndividualsView from './components/IndividualsView';
+import ServicesView from './components/ServicesView';
 import Footer from './components/Footer';
 
 // --- Navbar (WoodNest Inspired) ---
@@ -20,6 +21,7 @@ const Navbar = ({ onBookNow, onLogoClick, onLinkClick, isBookingView }: { onBook
   }, []);
 
   const navLinks = [
+    { name: 'Services', view: 'services' },
     { name: 'For Businesses', view: 'corporate' },
     { name: 'For Individuals', view: 'flights' },
     { name: 'Visa & Passport', view: 'visa' },
@@ -152,8 +154,8 @@ const Hero = ({ onLinkClick }: { onLinkClick: (view: any) => void }) => {
 
             <div className="max-w-xl">
               <p className="text-lg lg:text-xl text-white/50 font-medium leading-relaxed mb-12">
-                Ghana's premiere travel management partner since 1989.
-                Optimizing corporate spend and delivering seamless leisure experiences globally.
+                The undisputed leader in corporate travel management since 1989.
+                Optimizing institutional mobility and delivering world-class travel experiences across Africa.
               </p>
 
               <div className="flex items-center gap-8">
@@ -211,19 +213,19 @@ const Hero = ({ onLinkClick }: { onLinkClick: (view: any) => void }) => {
 const CorporateBenefits = () => {
   const benefits = [
     {
-      title: "Cost Optimization & ROI",
-      desc: "Our proprietary algorithm delivers institutional-grade fare engineering, reducing annual travel spend by an average of 24%.",
-      icon: <BarChart3 className="w-6 h-6" />
+      title: "Managed Booking & Ticketing",
+      desc: "Comprehensive flight management with priority desk access and institutional-grade fare engineering for maximum ROI.",
+      icon: <Plane className="w-6 h-6" />
     },
     {
-      title: "Duty of Care & Safety",
-      desc: "24/7 real-time traveler tracking and emergency response protocols to ensure absolute employee security anywhere in the world.",
+      title: "360° Ground & Hotel Logistics",
+      desc: "End-to-end management of hotel procurement and corporate car rentals, ensuring seamless transitions in every city.",
+      icon: <MapPin className="w-6 h-6" />
+    },
+    {
+      title: "Duty of Care & Compliance",
+      desc: "24/7 real-time tracking and automated policy enforcement to ensure absolute security and budget control.",
       icon: <Shield className="w-6 h-6" />
-    },
-    {
-      title: "Policy Compliance",
-      desc: "Automated monitoring that enforces your company's travel culture, budget caps, and approval workflows in real-time.",
-      icon: <Briefcase className="w-6 h-6" />
     }
   ];
 
@@ -233,10 +235,10 @@ const CorporateBenefits = () => {
         <div className="flex flex-col lg:flex-row gap-20 items-center">
           <div className="lg:w-1/2">
             <h2 className="text-5xl lg:text-7xl font-black text-[#0a2e0c] mb-8 leading-tight">
-              Engineered for <br /><span className="text-[#FF5A06]">Corporate Impact.</span>
+              The Premier Partner for <br /><span className="text-[#FF5A06]">Corporate Excellence.</span>
             </h2>
             <p className="text-xl text-slate-600 font-medium leading-relaxed mb-12">
-              Beyond bookings, we provide the infrastructure for growth. Whether you're a CFO focused on the bottom line or an HR Director prioritizing safety, we are your strategic travel partner.
+              Satguru Travel is the definitive choice for institutional mobility. We don't just book trips—we serve as your strategic partner, managing your entire corporate travel ecosystem with global precision and local expertise.
             </p>
             <div className="space-y-8">
               {benefits.map((benefit, i) => (
@@ -266,10 +268,10 @@ const CorporateBenefits = () => {
             <div className="absolute -bottom-10 -left-10 glass-card-dark p-8 rounded-3xl hidden lg:block">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-3 h-3 rounded-full bg-[#FF5A06] animate-pulse" />
-                <span className="text-sm font-bold uppercase tracking-widest text-[#FF5A06]">Live Analytics Dashboard</span>
+                <span className="text-sm font-bold uppercase tracking-widest text-[#FF5A06]">Strategic Corporate Partnership</span>
               </div>
               <p className="text-2xl font-black text-white">Institutional Value</p>
-              <p className="text-xs text-white/40 font-bold uppercase tracking-widest mt-1">Real-time reporting & Compliance</p>
+              <p className="text-xs text-white/40 font-bold uppercase tracking-widest mt-1">Unrivaled Support & Global Reach</p>
             </div>
           </div>
         </div>
@@ -279,35 +281,28 @@ const CorporateBenefits = () => {
 };
 
 // --- Services List ---
-const DetailedServices = ({ onServiceClick }: { onServiceClick: (type: string) => void }) => {
+const DetailedServices = ({ onServiceClick, onMoreClick }: { onServiceClick: (type: string) => void, onMoreClick: () => void }) => {
   const serviceList = [
     {
-      id: 'management',
+      id: 'corporate',
       title: 'Corporate Travel Management',
-      desc: 'Institutional-grade oversight for enterprise fleets, policy compliance, and cost optimization.',
+      desc: 'Full-scale travel management covering everything from managed booking to institutional auditing.',
       icon: <Briefcase className="w-12 h-12" />,
       image: "/service-management.png"
     },
     {
       id: 'flights',
-      title: 'Business & Leisure Booking',
-      desc: 'Seamless access to global inventories for flights and hotels with priority support.',
-      icon: <Plane className="w-12 h-12" />,
-      image: "/service-flights.png"
+      title: 'Leisure Travel Booking',
+      desc: 'Bespoke vacation planning and exclusive holiday packages for individuals and families.',
+      icon: <Palmtree className="w-12 h-12" />,
+      image: "/bespoke-travel.png"
     },
     {
       id: 'visa',
-      title: 'Visa & Passport Services',
-      desc: 'Expert assistance and direct diplomatic desk access for expedited travel documentation.',
+      title: 'Visa & Passport Processing',
+      desc: 'Expert diplomatic desk access for expedited visa processing and travel documentation.',
       icon: <Shield className="w-12 h-12" />,
       image: "/visa-hero.png",
-    },
-    {
-      id: 'management', // Mapping to management/corporate for now
-      title: 'MICE & Group Travel',
-      desc: 'Strategic planning for Meetings, Incentives, Conferences, and large-scale Group Events.',
-      icon: <Globe className="w-12 h-12" />,
-      image: "/service-mice.png"
     },
   ];
 
@@ -323,7 +318,7 @@ const DetailedServices = ({ onServiceClick }: { onServiceClick: (type: string) =
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {serviceList.map((service, i) => (
             <motion.div
               key={i}
@@ -349,6 +344,28 @@ const DetailedServices = ({ onServiceClick }: { onServiceClick: (type: string) =
               </div>
             </motion.div>
           ))}
+
+          {/* "And Many More" Card */}
+          <motion.div
+            whileHover={{ y: -20 }}
+            className="group cursor-pointer bg-[#FF5A06] rounded-[3rem] p-8 transition-luxury hover:bg-[#0a2e0c] hover:shadow-2xl flex flex-col justify-center items-center text-center relative overflow-hidden"
+            onClick={onMoreClick}
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl" />
+            <div className="text-white mb-8 group-hover:scale-110 transition-luxury">
+              <Globe className="w-20 h-20" />
+            </div>
+            <h3 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
+              And Many <br /> More...
+            </h3>
+            <p className="text-white/80 font-medium leading-relaxed italic mb-10 text-sm font-merriweather max-w-[200px]">
+              Discover our full suite of premium travel and logistics solutions.
+            </p>
+            <div className="flex items-center gap-4 text-white font-black uppercase tracking-widest text-xs py-4 px-8 bg-white/10 rounded-2xl group-hover:bg-[#FF5A06] transition-luxury backdrop-blur-sm">
+              <span>Explore All Services</span>
+              <ArrowRight className="w-4 h-4" />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -464,9 +481,9 @@ const CorporateHeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     {
-      subtitle: "Strategic Fare Engineering",
+      subtitle: "360° Managed Services",
       title: <>Maximum <br /><span className="text-white/30">ROI.</span></>,
-      desc: "Our proprietary algorithms and global GDS access return an average of 24% in cost savings to our corporate partners.",
+      desc: "Beyond ticketing, we manage your entire mobility footprint—from hotel procurement to global car rentals—delivering up to 24% annual savings.",
       image: "/corporate-fare-engineering.png",
       tag: "CFO Intelligence"
     },
@@ -617,18 +634,18 @@ const CorporateView = () => (
         <div className="grid lg:grid-cols-2 gap-32 items-center mb-40">
           <div>
             <h3 className="text-5xl lg:text-7xl font-black text-[#0a2e0c] mb-12 leading-tight">
-              engineered for <br />
-              <span className="text-[#FF5A06]">The Bottom Line.</span>
+              The Ultimate Partner for <br />
+              <span className="text-[#FF5A06]">Corporate Mobility.</span>
             </h3>
             <p className="text-xl text-slate-600 font-medium leading-relaxed mb-12">
-              Corporate travel in West Africa requires more than just booking software. It requires a partner with deep local roots and a 70-country global infrastructure. We solve the complexities of institutional mobility so you can focus on growth.
+              Corporate travel demands more than a booking engine—it requires a comprehensive management partner. From global ticketing and hotel procurement to seamless car rentals, we handle the entire spectrum of institutional travel.
             </p>
 
             <div className="space-y-12">
               {[
                 {
-                  title: "Institutional Fare Engineering",
-                  desc: "Our proprietary algorithms and global GDS access return an average of 24% in cost savings to our corporate partners.",
+                  title: "Managed Booking & Ticketing",
+                  desc: "Our priority desks handle the full cycle of corporate ticketing, ensuring optimal routing and maximum fare engineering savings.",
                   icon: <BarChart3 className="w-8 h-8" />
                 },
                 {
@@ -676,9 +693,9 @@ const CorporateView = () => (
               <div className="inline-block px-4 py-1 rounded-full bg-white/10 text-white text-xs font-black uppercase tracking-widest mb-8">
                 The SATGURU Portal
               </div>
-              <h3 className="text-5xl lg:text-7xl font-black text-white mb-12 tracking-ultra">Total Control, <br />In Real Time.</h3>
+              <h3 className="text-5xl lg:text-7xl font-black text-white mb-12 tracking-ultra">Total Control, <br />Every Step.</h3>
               <p className="text-xl text-white/60 font-medium leading-relaxed mb-12">
-                Our enterprise platform provides a bird's-eye view of your entire global operations. Monitor spend, track travelers, and approve requests from a single, high-security dashboard.
+                Our enterprise platform provides a bird's-eye view of your entire global operations. Manage travel, track teams, and approve requests from a single, high-security management portal.
               </p>
               <div className="grid grid-cols-2 gap-8">
                 <div>
@@ -821,7 +838,7 @@ const CorporateView = () => (
 
 // --- Main App ---
 export default function App() {
-  const [view, setView] = useState<'landing' | 'flights' | 'hotels' | 'visa' | 'management' | 'solutions' | 'corporate' | 'about' | 'contact'>('landing');
+  const [view, setView] = useState<'landing' | 'flights' | 'hotels' | 'visa' | 'management' | 'solutions' | 'corporate' | 'about' | 'contact' | 'services'>('landing');
 
   return (
     <div className="bg-[#0a2e0c] min-h-screen selection:bg-[#FF5A06] selection:text-white">
@@ -846,9 +863,12 @@ export default function App() {
             <CorporateBenefits />
             <GhanaSection />
             <div className="bg-white">
-              <DetailedServices onServiceClick={(type) => {
-                setView(type as any);
-              }} />
+              <DetailedServices
+                onServiceClick={(type) => {
+                  setView(type as any);
+                }}
+                onMoreClick={() => setView('services')}
+              />
             </div>
           </motion.div>
         ) : view === 'about' ? (
@@ -866,6 +886,10 @@ export default function App() {
         ) : view === 'corporate' ? (
           <motion.div key="corporate" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
             <CorporateView />
+          </motion.div>
+        ) : view === 'services' ? (
+          <motion.div key="services" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
+            <ServicesView />
           </motion.div>
         ) : view === 'flights' ? (
           <motion.div key="flights" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>

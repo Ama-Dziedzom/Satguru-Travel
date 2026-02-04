@@ -1,11 +1,11 @@
-import { MapPin, CheckCircle2, CreditCard, MessageCircle } from 'lucide-react';
+import { MapPin, CheckCircle2, Briefcase, MessageCircle } from 'lucide-react';
 
 const GhanaSection = () => {
     const localBenefits = [
         {
-            title: "Mobile Money Integration",
-            description: "Pay for your flight and hotel bookings conveniently using MTN MoMo, Telecel Cash, or AT Money.",
-            icon: <CreditCard className="w-6 h-6 text-brand-gold" />
+            title: "Bespoke Corporate Billing",
+            description: "Flexible credit terms and consolidated monthly invoicing tailored to meet Ghanaian institutional requirements.",
+            icon: <Briefcase className="w-6 h-6 text-brand-gold" />
         },
         {
             title: "Regional Expertise",
@@ -38,7 +38,7 @@ const GhanaSection = () => {
                     <div>
                         <h2 className="text-brand-blue font-black text-sm uppercase tracking-[0.3em] mb-4">Local Knowledge, Global Reach</h2>
                         <h3 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-tight">
-                            Supporting Ghanaian Businesses for <span className="text-brand-blue">Over 3 Decades.</span>
+                            The Trusted Partner for Ghanaian Business for <span className="text-brand-blue">Over 3 Decades.</span>
                         </h3>
 
                         <div className="space-y-10">
