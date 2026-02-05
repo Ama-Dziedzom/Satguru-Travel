@@ -1,4 +1,4 @@
-import { Plane, ArrowRight, MessageSquare, Menu, X, Star, Briefcase, BarChart3, Shield, MapPin, Phone, Mail, Globe, CheckCircle2, Palmtree, Package, Key } from 'lucide-react';
+import { Plane, ArrowRight, MessageSquare, Menu, X, Star, Briefcase, BarChart3, Shield, MapPin, Phone, Mail, Globe, CheckCircle2, Palmtree } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { cn } from './lib/utils';
