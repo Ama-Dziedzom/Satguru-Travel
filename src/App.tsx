@@ -22,7 +22,7 @@ const Navbar = ({ onBookNow, onLogoClick, onLinkClick, isBookingView }: { onBook
   }, []);
 
   const navLinks = [
-    { name: 'About US', view: 'about' },
+    { name: 'About Us', view: 'about' },
     { name: 'For Businesses', view: 'corporate' },
     { name: 'For Individuals', view: 'flights' },
     { name: 'Visa&Passport', view: 'visa' },
