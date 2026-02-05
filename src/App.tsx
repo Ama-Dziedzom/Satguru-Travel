@@ -294,7 +294,7 @@ const DetailedServices = ({ onServiceClick, onMoreClick }: { onServiceClick: (ty
     },
     {
       id: 'flights',
-      title: 'Leisure Travel Booking',
+      title: 'Leisure Travel Planning',
       desc: 'Bespoke vacation planning and exclusive holiday packages for individuals and families.',
       icon: <Palmtree className="w-12 h-12" />,
       image: "/bespoke-travel.png"

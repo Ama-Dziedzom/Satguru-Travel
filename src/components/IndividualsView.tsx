@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Plane, Star, MapPin, ArrowRight, Clock, Tag, Globe, Users, ShieldCheck, Heart } from 'lucide-react';
 import { cn } from '../lib/utils';
-import BookingHero from './BookingHero';
+import LeisureHeroCarousel from './LeisureHeroCarousel';
 
 const destinations = [
     { name: 'Dubai', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800' },
@@ -45,7 +45,7 @@ const offers = [
 export default function IndividualsView() {
     return (
         <div className="bg-white">
-            <BookingHero mode="flights" />
+            <LeisureHeroCarousel />
 
             {/* Featured Destinations Carousel (Airplane Window Inspired) */}
             <section className="py-24 overflow-hidden bg-slate-50">
@@ -61,7 +61,7 @@ export default function IndividualsView() {
                             </h2>
                         </div>
                         <p className="max-w-md text-slate-500 font-medium leading-relaxed italic font-merriweather">
-                            "We don't just book flights; we curate memories that last a lifetime. Explore the world's most iconic landmarks with exclusive airfare deals."
+                            "We don't just book flights; we curate personal adventures. From seamless logistics to hidden local secrets, we handle the planning so you can enjoy the map."
                         </p>
                     </div>
 
@@ -95,9 +95,9 @@ export default function IndividualsView() {
             <section className="py-32">
                 <div className="max-w-[1600px] mx-auto px-8 lg:px-20">
                     <div className="text-center mb-24">
-                        <h2 className="text-6xl font-black text-[#0a2e0c] mb-6">Exclusive <span className="text-[#FF5A06]">Offers.</span></h2>
+                        <h2 className="text-6xl font-black text-[#0a2e0c] mb-6">Planned <span className="text-[#FF5A06]">Escapes.</span></h2>
                         <p className="text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
-                            Curated travel packages designed for the modern explorer. Premium stays, seamless logistics, and unbeatable value.
+                            Hand-crafted itineraries designed for the modern explorer. From boutique stays to seamless logistics, every detail is engineered for your discovery.
                         </p>
                     </div>
 
@@ -144,7 +144,7 @@ export default function IndividualsView() {
                                         {offer.desc}
                                     </p>
                                     <button className="w-full py-5 bg-[#0a2e0c] text-white rounded-2xl font-black uppercase tracking-widest hover:bg-[#FF5A06] transition-luxury flex items-center justify-center gap-3">
-                                        Start Adventure <ArrowRight className="w-5 h-5" />
+                                        Explore Itinerary <ArrowRight className="w-5 h-5" />
                                     </button>
                                 </div>
                             </motion.div>
@@ -166,8 +166,8 @@ export default function IndividualsView() {
                             <div className="space-y-12">
                                 {[
                                     {
-                                        title: "Preferred Airfare Rates",
-                                        desc: "Our global network grants us access to private fares and inventory that aren't available to the general public.",
+                                        title: "Bespoke Planning",
+                                        desc: "Our travel experts craft custom routes and schedules that perfectly align with your travel goals, not just the nearest airport.",
                                         icon: <Plane className="w-8 h-8" />
                                     },
                                     {

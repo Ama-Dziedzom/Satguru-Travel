@@ -32,10 +32,10 @@ export default function BookingHero({ mode = 'flights' }: BookingHeroProps) {
             stats: "1.2M+ Property Network"
         };
         return {
-            title: <>Save up to <span className="inline-block">64%</span> on international business class</>,
-            desc: "Yes, seriously! Satguru unlocks exclusive access to private fares you won't find on Expedia or Hotwire.",
+            title: <>Plan your next <span className="inline-block">Great Escape</span> with us</>,
+            desc: "Bespoke travel experiences tailored for you. From hidden gems to iconic destinations, we handle the planning so you can focus on the journey.",
             image: "/individuals-hero.png",
-            stats: "Trustpilot Excellent"
+            stats: "Curating Memories Since 1989"
         };
     };
 
@@ -70,7 +70,7 @@ export default function BookingHero({ mode = 'flights' }: BookingHeroProps) {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-xl text-white/90 font-medium mb-8 leading-relaxed"
                     >
-                        <span className="font-bold">Satguru Enterprise.</span> {content.desc}
+                        <span className="font-bold">Satguru {isManagement ? "Enterprise" : "Travel"}.</span> {content.desc}
                     </motion.p>
 
                     <motion.div
@@ -100,14 +100,14 @@ export default function BookingHero({ mode = 'flights' }: BookingHeroProps) {
                     <div className="flex flex-wrap items-center gap-8 mb-8">
                         <div className="flex items-center gap-2 cursor-pointer group">
                             <span className="text-sm font-bold text-slate-900 group-hover:text-[#FF5A06] transition-colors uppercase tracking-widest">
-                                {isHotels ? "Hotel & Resort" : isVisa ? "Business Visa" : isManagement ? "Strategy Portal" : "Round Trip"}
+                                {isHotels ? "Hotel & Resort" : isVisa ? "Business Visa" : isManagement ? "Strategy Portal" : "Custom Itinerary"}
                             </span>
                             <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-[#FF5A06]" />
                         </div>
                         <div className="w-[1px] h-6 bg-slate-200" />
                         <div className="flex items-center gap-2 cursor-pointer group">
                             <span className="text-sm font-bold text-slate-900 group-hover:text-[#FF5A06] transition-colors uppercase tracking-widest">
-                                {isManagement ? "Enterprise Audit" : "1 Passenger"}
+                                {isManagement ? "Enterprise Audit" : "Travelers"}
                             </span>
                             <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-[#FF5A06]" />
                         </div>
@@ -123,8 +123,8 @@ export default function BookingHero({ mode = 'flights' }: BookingHeroProps) {
                                         <Plane className="w-5 h-5 rotate-45" />
                                     </div>
                                     <div>
-                                        <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">From*</span>
-                                        <span className="block text-lg font-bold text-slate-900">Departure</span>
+                                        <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Starting From</span>
+                                        <span className="block text-lg font-bold text-slate-900">Origin</span>
                                     </div>
                                 </div>
                                 <div className="relative z-10 -mx-4 h-full flex items-center justify-center">
@@ -137,7 +137,7 @@ export default function BookingHero({ mode = 'flights' }: BookingHeroProps) {
                                         <Plane className="w-5 h-5 -rotate-[135deg]" />
                                     </div>
                                     <div>
-                                        <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">To*</span>
+                                        <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Going To</span>
                                         <span className="block text-lg font-bold text-slate-900">Destination</span>
                                     </div>
                                 </div>
@@ -187,8 +187,11 @@ export default function BookingHero({ mode = 'flights' }: BookingHeroProps) {
                         </div>
 
                         <div className="h-full bg-[#FF5A06] hover:bg-[#e65105] transition-colors">
-                            <button className="w-full lg:w-20 h-full flex items-center justify-center text-white p-6">
-                                <Search className="w-8 h-8" />
+                            <button className="w-full lg:px-10 h-full flex items-center justify-center text-white p-6 gap-3 group">
+                                <span className="font-black uppercase tracking-widest text-sm whitespace-nowrap">
+                                    {isFlights ? "Start Planning" : "Search"}
+                                </span>
+                                <Search className="w-5 h-5 group-hover:scale-110 transition-transform" />
                             </button>
                         </div>
                     </div>
