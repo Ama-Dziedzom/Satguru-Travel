@@ -1,4 +1,4 @@
-import { Plane, ArrowRight, MessageSquare, Menu, X, Star, Briefcase, BarChart3, Shield, MapPin, Phone, Mail, Globe, CheckCircle2, Palmtree } from 'lucide-react';
+import { Plane, ArrowRight, MessageSquare, Menu, X, Star, Briefcase, BarChart3, Shield, MapPin, Phone, Mail, Globe, CheckCircle2, Palmtree, Calculator } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { cn } from './lib/utils';
@@ -8,6 +8,7 @@ import Partners from './components/Partners';
 import IndividualsView from './components/IndividualsView';
 import ServicesView from './components/ServicesView';
 import Footer from './components/Footer';
+import TravelCalculator from './components/TravelCalculator';
 
 // --- Navbar (WoodNest Inspired) ---
 const Navbar = ({ onBookNow, onLogoClick, onLinkClick, isBookingView }: { onBookNow: () => void, onLogoClick: () => void, onLinkClick: (view: any) => void, isBookingView?: boolean }) => {
@@ -21,11 +22,12 @@ const Navbar = ({ onBookNow, onLogoClick, onLinkClick, isBookingView }: { onBook
   }, []);
 
   const navLinks = [
-    { name: 'Services', view: 'services' },
+    { name: 'About US', view: 'about' },
     { name: 'For Businesses', view: 'corporate' },
     { name: 'For Individuals', view: 'flights' },
-    { name: 'Visa & Passport', view: 'visa' },
-    { name: 'About Us', view: 'about' },
+    { name: 'Visa&Passport', view: 'visa' },
+    { name: 'Services', view: 'services' },
+    { name: 'Travel calculator', view: 'calculator', icon: Calculator },
   ];
 
   const lightMode = isBookingView;
@@ -838,7 +840,7 @@ const CorporateView = () => (
 
 // --- Main App ---
 export default function App() {
-  const [view, setView] = useState<'landing' | 'flights' | 'hotels' | 'visa' | 'management' | 'solutions' | 'corporate' | 'about' | 'contact' | 'services'>('landing');
+  const [view, setView] = useState<'landing' | 'flights' | 'hotels' | 'visa' | 'management' | 'solutions' | 'corporate' | 'about' | 'contact' | 'services' | 'calculator'>('landing');
 
   return (
     <div className="bg-[#0a2e0c] min-h-screen selection:bg-[#FF5A06] selection:text-white">
@@ -894,6 +896,10 @@ export default function App() {
         ) : view === 'flights' ? (
           <motion.div key="flights" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
             <IndividualsView />
+          </motion.div>
+        ) : view === 'calculator' ? (
+          <motion.div key="calculator" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
+            <TravelCalculator />
           </motion.div>
         ) : (
           <motion.div
